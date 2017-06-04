@@ -42,10 +42,10 @@ class String
   include FunWithStrings
 end
 
-#=begin
+=begin
 puts anagram_groups(['cars', 'for', 'potatoes', 'racs', 'four','scar', 'creams', 'scream'] )
 puts palindrome?("A man, a plan, a canal -- Panama")  # => true
 puts palindrome?("Madam, I'm Adam!")                  # => true
 puts palindrome?("Abracadabra")                       # => false (nil is also ok)
 puts count_words("A man, a plan, a canal -- Panama")
-#=end
+=end
