@@ -45,8 +45,8 @@ end
 s = String.new
 j = String.new
 k = String.new
-s.anagram_groups(['cars', 'for', 'potatoes', 'racs', 'four','scar', 'creams', 'scream'] )
-j.palindrome?("A man, a plan, a canal -- Panama")  # => true
-j.palindrome?("Madam, I'm Adam!")                  # => true
-j.palindrome?("Abracadabra")                       # => false (nil is also ok)
-k.count_words("A man, a plan, a canal -- Panama")
+s.anagram_groups(['cars', 'uofr', 'potatoes', 'racs', 'four','scar', 'creams', 'scream', 'tomatoes', 'real', 'madrid', 'bear', 'reab'] )
+j.palindrome?("RaceCar")  
+j.palindrome?("Madam, I'm Adam!")                  
+j.palindrome?("Abracadabra")                       
+k.count_words("A huge victory for Real madrid. A truly sensational victory.")
