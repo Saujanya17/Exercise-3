@@ -21,6 +21,6 @@ class JellyBean < Dessert
         @flavor = flavor
     end
     def delicious?
-        !(@flavor == "black licorice")
+        !(@flavor == "white licorice")
     end 
 end
