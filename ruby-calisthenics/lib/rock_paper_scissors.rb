@@ -2,37 +2,23 @@ class RockPaperScissors
 
   # Exceptions this class can raise:
   class NoSuchStrategyError < StandardError ; end
-  class WrongNumberOfPlayersError < StandardError ; end
-
 
   def self.winner(player1, player2)
-    # YOUR CODE HERE
-    return (player1 + player2) =~ /rs|sp|pr|rr|ss|pp/i
-  end
-def rps_game_winner(game)
-  	# YOUR CODE HERE
-	raise WrongNumberOfPlayersError unless game.length == 2
-	strategy = ["r","p","s"] # array of possible strategys or moves
-	raise NoSuchStrategyError unless strategy.include?(game[0][1].downcase) && strategy.include?(game[1][1].downcase)#raise and error if move is not part of the strategy
-	
-	#takes played moves and check if it is a winning combo
-	if rps_result(game[0][1], game[1][1])
-		game[0]
-	else
-		game[1]
-	end
-end
-def self.tournament_winner(tournament)
-    # YOUR CODE HERE
-  if tournament[0][1].class==String
-		self.tournament_winner(tournament)
-	else
-		round1 = self.tournament_winner(tournament[0])
-		round2 = self.tournament_winner(tournament[1])
-		self.tournament_winner([round1,round2])
-	
+    case player1[1] + player2[1]
+    when 'PR', 'SP', 'RS' then player1
+    when 'RP', 'PS', 'SR' then player2
+    when 'RR', 'PP', 'SS' then player1
+    else raise NoSuchStrategyError, "R,P,S only. Please!"
+    end
   end
 
-end
+  def self.tournament_winner(tournament)
+    
+    if tournament[0][0].is_a?(String)
+      winner(tournament[0], tournament[1])
+    else
+      winner(tournament_winner(tournament[0]), tournament_winner(tournament[1]))
+    end
+  end
 
 end
